@@ -1,0 +1,89 @@
+/* Hago reset a los estilos por default*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal del navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos */
+    padding: 5px;
+    background-color: #ff985c;
+}
+
+.navbar img {
+    width: 50px;  /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción */
+    margin: 0rem 1rem;
+}
+
+/* Contenedores de los elementos del navbar */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre elementos */
+}
+
+/* Logo */
+.nav-container:first-child {
+    flex: 1;
+}
+
+/* Formulario de búsqueda */
+.nav-container:nth-child(2) {
+    flex: 2;
+    justify-content: center;
+}
+
+/* Botones a la derecha */
+.nav-container:last-child {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* Lista de navegación */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+/* Formulario de búsqueda */
+form {
+    width: 100%;
+    max-width: 300px;
+}
+
+input[type="search"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Botones */
+button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+/* Icono de ayuda */
+button svg {
+    vertical-align: middle;
+}
