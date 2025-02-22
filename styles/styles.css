@@ -5,13 +5,42 @@
     box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "aside main main main"
+        "aside main main main"
+        "aside main main main"
+        "footer footer footer footer";
+    grid-template-columns: 20% auto auto auto;
+    font-family: "Roboto", sans-serif;
+}
+
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: aside;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
 /* Contenedor principal del navbar */
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribuye los elementos */
+    justify-content: space-between; 
     padding: 5px;
-    background-color: #ff985c;
+    background-color: hsl(16, 100%, 43%);
 }
 
 .navbar img {
@@ -44,15 +73,22 @@
     justify-content: flex-end;
 }
 
+.navbar img, input, button {
+    height: 40px;
+}
+
+li, ul, a {
+    text-decoration: none;
+    list-style: none;
+}
+
 /* Lista de navegación */
 .nav-list {
     display: flex;
-    list-style: none;
     gap: 15px;
 }
 
 .nav-list li a {
-    text-decoration: none;
     font-weight: bold;
     color: black;
 }
@@ -67,23 +103,87 @@ input[type="search"] {
     width: 100%;
     padding: 8px;
     border-radius: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid hsl(0, 0%, 80%);
 }
 
 /* Botones */
 button {
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: hsl(0, 0%, 80%);
+    border: 1px solid hsl(0, 0%, 80%);
     padding: 8px 15px;
     border-radius: 20px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #ddd;
+    background-color: hsl(0, 0%, 60%);
+    border: 1px solid hsl(0, 0%, 60%);
 }
 
 /* Icono de ayuda */
 button svg {
     vertical-align: middle;
 }
+
+main {
+    display: flex;
+    background-color: hsl(0, 3%, 98%);
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-right: solid 1px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: solid 1px hsl(0, 3%, 55%);
+    border-radius: 1%;
+    background-color: white;
+    margin: 2rem;
+    paddin: 2 rem;
+;
+}
+
+.content {
+    max-width: 70vw;
+    height: auto;
+}
+
+.topic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    min-width: 80%;
+}
+
+.topic-container h2{
+    font-size: 1.8rem;
+}
+
+.topic-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1rem;
+
+}
+
+hr {
+    width: 90%;
+    height: 1px;
+}
+
