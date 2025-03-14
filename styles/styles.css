@@ -1,205 +1,287 @@
-/* Hago reset a los estilos por default*/
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: grid;
-    grid-template-areas:
-        "header header header header"
-        "aside main main main"
-        "aside main main main"
-        "aside main main main"
-        "footer footer footer footer";
-    grid-template-columns: 20% auto auto auto;
-    font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-areas: "header header header header" "aside main main main" "aside main main main" "aside main main main" "footer footer footer footer";
+  grid-template-columns: 20% auto auto auto;
+  font-family: "Roboto", sans-serif;
 }
 
-
 header {
-    grid-area: header;
+  grid-area: header;
 }
 
 aside {
-    grid-area: aside;
+  grid-area: aside;
 }
 
 main {
-    grid-area: main;
+  grid-area: main;
 }
 
 footer {
-    grid-area: footer;
+  grid-area: footer;
 }
-
-/* Contenedor principal del navbar */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 5px;
-    background-color: hsl(16, 100%, 43%);
-}
-
-.navbar img {
-    width: 50px;  /* Ajusta el tamaño del logo */
-    height: auto; /* Mantiene la proporción */
-    margin: 0px 1rem;
-}
-
-/* Contenedores de los elementos del navbar */
-.nav-container {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Espacio entre elementos */
-}
-
-/* Logo */
-.nav-container:first-child {
-    flex: 1;
-}
-
-/* Formulario de búsqueda */
-.nav-container:nth-child(2) {
-    flex: 2;
-    justify-content: center;
-}
-
-/* Botones a la derecha */
-.nav-container:last-child {
-    flex: 1;
-    justify-content: flex-end;
-}
-
-.navbar img, input, button {
-    height: 40px;
-}
-
-li, ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-/* Lista de navegación */
-.nav-list {
-    display: flex;
-    gap: 15px;
-}
-
-.nav-list li a {
-    font-weight: bold;
-    color: black;
-}
-
-/* Formulario de búsqueda */
-form {
-    width: 100%;
-    max-width: 300px;
-}
-
-input[type="search"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 20px;
-    border: 1px solid hsl(0, 0%, 80%);
-}
-
-/* Botones */
-button {
-    background-color: hsl(0, 0%, 80%);
-    border: 1px solid hsl(0, 0%, 80%);
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: hsl(0, 0%, 60%);
-    border: 1px solid hsl(0, 0%, 60%);
-}
-
-/* Icono de ayuda */
-button svg {
-    vertical-align: middle;
-}
-
-
-main section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-section article {
-    flex: 1 1 calc(50% - 10px); 
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.post {
-    flex: 1 1 calc(50% - 20px); /* 50% menos el espacio del gap */
-    max-width: 500px; /* Evita que los artículos sean demasiado anchos */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 20px;
-}
-
-.post .content {
-    max-width: 100%; /* Evita que la imagen sobrepase el ancho del contenedor */
-    height: auto; /* Mantiene la proporción */
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-}
-
-/* Estilos del aside */
 
 aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    border-right: solid 1px;
-    position: sticky;
-    top: 0px;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+  background-color: hsl(0, 0%, 97%);
+  position: sticky;
+  top: 0;
+  height: 60vh;
+}
+aside a {
+  text-decoration: none;
+  color: black;
 }
 
 .explore {
-    display: inline-flex;
-    align-items: center;
-    margin: 1.5rem 0px 0.5rem;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0 0.5rem;
 }
 
 .topic-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    min-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  min-width: 80%;
 }
-
-.topic-container h2{
-    font-size: 1.8rem;
+.topic-container h2 {
+  font-size: 1.8rem;
 }
-
 .topic-container ul {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 1rem;
-
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1rem;
+}
+.topic-container ul li {
+  list-style: none;
 }
 
 hr {
-    width: 90%;
-    height: 1px;
+  width: 90%;
+  height: 1px;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  aside {
+    display: none;
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: hsl(16, 100%, 43%);
+}
+.navbar img {
+  width: 50px;
+  height: auto;
+  margin: 0 1rem;
+}
+.navbar .nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar .nav-container:first-child {
+  flex: 1;
+}
+.navbar .nav-container:nth-child(2) {
+  flex: 2;
+  justify-content: center;
+}
+.navbar .nav-container:last-child {
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.navbar input, .navbar button {
+  height: 40px;
+}
+.navbar .nav-list {
+  display: flex;
+  gap: 15px;
+}
+.navbar .nav-list li {
+  list-style: none;
+}
+.navbar .nav-list a {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+.navbar .nav-list a:hover {
+  text-decoration: underline;
+}
+.navbar form {
+  width: 100%;
+  max-width: 300px;
+}
+.navbar form input[type=search] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid hsl(0, 0%, 80%);
+}
+.navbar button {
+  background-color: hsl(0, 0%, 80%);
+  border: 1px solid hsl(0, 0%, 80%);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.navbar button:hover {
+  background-color: hsl(0, 0%, 60%);
+  border-color: hsl(0, 0%, 60%);
+}
+.navbar button svg {
+  vertical-align: middle;
+}
+
+main section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+section article {
+  flex: 1 1 calc(50% - 10px);
+  box-sizing: border-box;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1 1 calc(50% - 20px);
+  max-width: 500px;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 2%;
+  background-color: hsl(0, 0%, 97%);
+}
+.post .content {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.user {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+button.btn {
+  background-color: hsl(16, 100%, 43%);
+}
+
+footer.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(16, 100%, 43%);
+  color: white;
+  padding: 0 20px;
+  height: 80px;
+  max-height: 80px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+footer.footer .footer-social a img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  margin-top: 4px;
+}
+footer.footer .footer-social a img:hover {
+  transform: scale(1.1);
+}
+footer.footer .footer-contact p,
+footer.footer .footer-links a {
+  color: white;
+  text-decoration: none;
+}
+footer.footer .footer-contact p:hover,
+footer.footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+  .nav-list {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-list a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  form {
+    width: 90%;
+    margin: 0 auto;
+  }
+  form input[type=search] {
+    width: 100%;
+  }
+  button {
+    width: auto;
+    margin: 0 auto;
+  }
+  .nav-container > div:nth-child(2) {
+    display: none;
+  }
+  aside {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,37 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+footer.footer {
+    @include m.flex-container(flex, row, center, space-between);
+    background-color: v.$color-primario;
+    color: white;
+    padding: 0 20px;
+    height: 80px;
+    max-height: 80px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 10px;
+  
+    .footer-social a img {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+      margin-top: 4px;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  
+    .footer-contact p,
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  

@@ -1,0 +1,82 @@
+@use 'variables' as v; 
+@use 'mixins' as m;
+
+body {
+    display: grid;
+    grid-template-areas:
+      "header header header header"
+      "aside main main main"
+      "aside main main main"
+      "aside main main main"
+      "footer footer footer footer";
+    grid-template-columns: 20% auto auto auto;
+    font-family: v.$font-family;
+  }
+  
+  header { grid-area: header; }
+  aside { grid-area: aside; }
+  main  { grid-area: main; }
+  footer { grid-area: footer; }
+  
+  aside {
+    @include m.flex-container(flex, column, stretch, center);
+    gap: 1rem;
+    background-color: v.$color-fondo;
+    position: sticky;
+    top: 0;
+    height: 60vh;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  
+  .explore {
+    @include m.flex-container(inline-flex, row, center, center);
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  .topic-container {
+    @include m.flex-container(flex, column, center, center);
+    gap: 10px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    min-width: 80%;
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 1rem;
+      li {
+        list-style: none;
+      }
+    }
+  }
+  
+  hr {
+    width: 90%;
+    height: 1px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+    }
+
+
+  
+    aside {
+      display: none;
+    } 
+  }
