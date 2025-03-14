@@ -1,0 +1,52 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .nav-container {
+      @include m.flex-container(flex, column, center, center);
+      width: 100%;
+      gap: 10px;
+    }
+  
+    .nav-list {
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .nav-list a {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  
+    form {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    form input[type="search"] {
+      width: 100%;
+    }
+  
+    button {
+      width: auto;
+      margin: 0 auto;
+    }
+  
+    .nav-container > div:nth-child(2) {
+      display: none;
+    }
+  
+    aside {
+      display: none;
+    }
+  }
+  
