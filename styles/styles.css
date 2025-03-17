@@ -4,96 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
-  display: grid;
-  grid-template-areas: "header header header header" "aside main main main" "aside main main main" "aside main main main" "footer footer footer footer";
-  grid-template-columns: 20% auto auto auto;
-  font-family: "Roboto", sans-serif;
-}
-
-header {
-  grid-area: header;
-}
-
-aside {
-  grid-area: aside;
-}
-
-main {
-  grid-area: main;
-}
-
-footer {
-  grid-area: footer;
-}
-
-aside {
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  gap: 1rem;
-  background-color: hsl(0, 0%, 97%);
-  position: sticky;
-  top: 0;
-  height: 60vh;
-}
-aside a {
-  text-decoration: none;
-  color: black;
-}
-
-.explore {
-  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 1.5rem 0 0.5rem;
-}
-
-.topic-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  min-width: 80%;
-}
-.topic-container h2 {
-  font-size: 1.8rem;
-}
-.topic-container ul {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-size: 1rem;
-}
-.topic-container ul li {
-  list-style: none;
-}
-
-hr {
-  width: 90%;
-  height: 1px;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    display: grid;
-    grid-template-areas: "header" "main" "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-  }
-  aside {
-    display: none;
-  }
-}
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 5px;
   background-color: hsl(16, 100%, 43%);
 }
@@ -145,7 +60,6 @@ hr {
   width: 100%;
   padding: 8px;
   border-radius: 20px;
-  border: 1px solid hsl(0, 0%, 80%);
 }
 .navbar button {
   background-color: hsl(0, 0%, 80%);
@@ -204,6 +118,10 @@ section article {
 
 button.btn {
   background-color: hsl(16, 100%, 43%);
+}
+
+input[type=checkbox] {
+  margin-right: 8px;
 }
 
 footer.footer {
@@ -278,6 +196,113 @@ footer.footer .footer-links a:hover {
   }
   .nav-container > div:nth-child(2) {
     display: none;
+  }
+  aside {
+    display: none;
+  }
+}
+body.index {
+  display: grid;
+  grid-template-areas: "header header header header" "aside main main main" "aside main main main" "aside main main main" "footer footer footer footer";
+  grid-template-columns: 20% auto auto auto;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  grid-area: header;
+}
+
+aside {
+  grid-area: aside;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+body.explorar {
+  display: grid;
+  grid-template-areas: "header header header header" "main main main aside" "main main main aside" "main main main aside" "footer footer footer footer";
+  grid-template-columns: auto auto auto 20%;
+  font-family: "Roboto", sans-serif;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+  background-color: hsl(0, 0%, 97%);
+  position: sticky;
+  top: 0;
+  height: 60vh;
+}
+aside a {
+  text-decoration: none;
+  color: black;
+}
+
+.explore {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.topic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  min-width: 80%;
+}
+.topic-container h2 {
+  font-size: 1.8rem;
+}
+.topic-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1rem;
+}
+.topic-container ul li {
+  list-style: none;
+}
+
+hr {
+  width: 90%;
+  height: 1px;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  padding: 20px;
+}
+
+.carousel-item {
+  border-radius: 10%;
+  max-width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
   }
   aside {
     display: none;
