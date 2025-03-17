@@ -1,9 +1,8 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include m.flex-container(flex, row, center, center);
     padding: 5px;
     background-color: v.$color-primario;
   
@@ -64,7 +63,6 @@
         width: 100%;
         padding: 8px;
         border-radius: 20px;
-        border: 1px solid v.$color-borde;
       }
     }
   

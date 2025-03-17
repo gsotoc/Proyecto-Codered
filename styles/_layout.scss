@@ -1,22 +1,35 @@
 @use 'variables' as v; 
 @use 'mixins' as m;
 
-body {
-    display: grid;
-    grid-template-areas:
-      "header header header header"
-      "aside main main main"
-      "aside main main main"
-      "aside main main main"
-      "footer footer footer footer";
-    grid-template-columns: 20% auto auto auto;
+body.index {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "aside main main main"
+    "aside main main main"
+    "aside main main main"
+    "footer footer footer footer";
+  grid-template-columns: 20% auto auto auto;
+  font-family: v.$font-family;
+}
+
+
+header { grid-area: header; }
+aside { grid-area: aside; }
+main  { grid-area: main; }
+footer { grid-area: footer; }
+
+body.explorar {
+  display: grid;
+  grid-template-areas: 
+    "header header header header"
+    "main main main aside"
+    "main main main aside"
+    "main main main aside"
+    "footer footer footer footer";
+    grid-template-columns: auto auto auto 20%;
     font-family: v.$font-family;
-  }
-  
-  header { grid-area: header; }
-  aside { grid-area: aside; }
-  main  { grid-area: main; }
-  footer { grid-area: footer; }
+ }
   
   aside {
     @include m.flex-container(flex, column, stretch, center);
@@ -62,6 +75,17 @@ body {
     width: 90%;
     height: 1px;
   }
+
+  .carousel-container {
+    @include m.flex-container(flex, column, center,center);
+    margin: 50px;
+    padding: 20px;
+  }
+
+  .carousel-item {
+    border-radius: 10%;
+    max-width: 90%;
+  }
   
   @media screen and (max-width: 768px) {
     body {
@@ -73,8 +97,6 @@ body {
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr auto;
     }
-
-
   
     aside {
       display: none;
