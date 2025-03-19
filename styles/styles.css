@@ -34,22 +34,17 @@
   justify-content: flex-end;
   margin-right: 20px;
 }
-.navbar input, .navbar button {
+.navbar input,
+.navbar button {
   height: 40px;
 }
-.navbar .nav-list {
-  display: flex;
-  gap: 15px;
-}
-.navbar .nav-list li {
-  list-style: none;
-}
-.navbar .nav-list a {
-  font-weight: bold;
+.navbar a {
+  font-size: 1.1rem;
+  font-weight: 400;
   color: black;
   text-decoration: none;
 }
-.navbar .nav-list a:hover {
+.navbar a:hover {
   text-decoration: underline;
 }
 .navbar form {
@@ -88,7 +83,6 @@ section article {
 }
 
 .post {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,7 +93,6 @@ section article {
   padding: 20px;
   border-radius: 2%;
   background-color: hsl(0, 0%, 97%);
-
 }
 .post .content {
   max-width: 100%;
@@ -285,6 +278,13 @@ hr {
   height: 1px;
 }
 
+.main-explorar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .carousel-container {
   display: flex;
   flex-direction: column;
@@ -296,7 +296,7 @@ hr {
 
 .carousel-item {
   border-radius: 10%;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -305,9 +305,6 @@ hr {
     grid-template-areas: "header" "main" "footer";
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-  }
-  aside {
-    display: none;
   }
 }
 
