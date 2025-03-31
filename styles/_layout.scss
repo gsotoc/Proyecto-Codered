@@ -1,5 +1,5 @@
-@use 'variables' as v; 
-@use 'mixins' as m;
+@use "variables" as v;
+@use "mixins" as m;
 
 body.index {
   display: grid;
@@ -13,92 +13,92 @@ body.index {
   font-family: v.$font-family;
 }
 
-
-header { grid-area: header; }
-aside { grid-area: aside; }
-main  { grid-area: main; }
-footer { grid-area: footer; }
+header {
+  grid-area: header;
+}
+aside {
+  grid-area: aside;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
 
 body.explorar {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "header header header header"
     "main main main aside"
     "main main main aside"
     "main main main aside"
     "footer footer footer footer";
-    grid-template-columns: auto auto auto 20%;
-    font-family: v.$font-family;
- }
-  
+  grid-template-columns: auto auto auto 20%;
+  font-family: v.$font-family;
+}
+
+aside {
+  @include m.flex-container(flex, column, stretch, center);
+  gap: 1rem;
+  background-color: v.$color-fondo;
+  position: sticky;
+  top: 0;
+  height: 60vh;
+}
+
+.explore {
+  @include m.flex-container(inline-flex, row, center, center);
+  margin: 1.5rem 0 0.5rem;
+}
+
+.topic-container {
+  @include m.flex-container(flex, column, center, center);
+  gap: 10px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  min-width: 80%;
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1rem;
+  }
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+}
+
+.carousel-container {
+  @include m.flex-container(flex, column, center, center);
+  margin: 50px;
+  padding: 20px;
+}
+
+.carousel-item {
+  border-radius: 10%;
+  max-width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
   aside {
-    @include m.flex-container(flex, column, stretch, center);
-    gap: 1rem;
-    background-color: v.$color-fondo;
-    position: sticky;
-    top: 0;
-    height: 60vh;
-    a {
-      text-decoration: none;
-      color: black;
-    }
+    display: none;
   }
-  
-  .explore {
-    @include m.flex-container(inline-flex, row, center, center);
-    margin: 1.5rem 0 0.5rem;
-  }
-  
-  .topic-container {
-    @include m.flex-container(flex, column, center, center);
-    gap: 10px;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    min-width: 80%;
-  
-    h2 {
-      font-size: 1.8rem;
-    }
-  
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      font-size: 1rem;
-      li {
-        list-style: none;
-      }
-    }
-  }
-  
-  hr {
-    width: 90%;
-    height: 1px;
-  }
-
-  .carousel-container {
-    @include m.flex-container(flex, column, center,center);
-    margin: 50px;
-    padding: 20px;
-  }
-
-  .carousel-item {
-    border-radius: 10%;
-    max-width: 90%;
-  }
-  
-  @media screen and (max-width: 768px) {
-    body {
-      display: grid;
-      grid-template-areas:
-        "header"
-        "main"
-        "footer";
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr auto;
-    }
-  
-    aside {
-      display: none;
-    } 
-  }
+}
