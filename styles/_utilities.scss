@@ -1,6 +1,10 @@
 @use "variables" as v;
 @use "mixins" as m;
 
+body {
+  font-family: v.$font-family;
+}
+
 main section {
   display: flex;
   flex-wrap: wrap;
@@ -48,6 +52,9 @@ li {
   list-style: none;
   &:hover{
     transform: scale(1.2);
+  }
+  a {
+    font-size: 18px;
   }
 }
 
