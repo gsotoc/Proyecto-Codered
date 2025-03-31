@@ -1,3 +1,2 @@
-# Selecciono todos los archivos generados automaticamente por SASS (.css y .css.map) para que no se suban a github
-*.css
+# Selecciono todos los archivos generados automaticamente por SASS (.css.map) para que no se suban a github
 *.css.map
