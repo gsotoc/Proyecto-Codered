@@ -35,13 +35,18 @@ section article {
 
 .user {
   width: 100%;
-  @include m.flex-container(flex, row, center, flex-start);
+  @include m.flex-container(flex, row, stretch, flex-start);
   gap: 10px;
   margin-left: 20px;
 }
 
 button.btn {
   background-color: v.$color-primario;
+
+  &:hover {
+    background-color: v.$color-secundario-hover;
+    color: black;
+  }
 }
 
 input[type="checkbox"] {
@@ -51,14 +56,21 @@ input[type="checkbox"] {
 li {
   list-style: none;
   &:hover{
-    transform: scale(1.2);
-  }
-  a {
-    font-size: 18px;
+    font-weight: bold;
   }
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+aside button {
+  background-color: v.$color-primario;
+  width: 100px;
+  border-radius: 25px;
+
+  &:hover{
+    transform: scale(1.2);
+  }
 }

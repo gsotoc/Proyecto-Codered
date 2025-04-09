@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+aside ul,
+aside ol {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+input[type="search"] {
+  border: none;
+  outline: none;
+}
+
+ul, ol {
+  padding-left: 0;
+  margin: 0;
+}

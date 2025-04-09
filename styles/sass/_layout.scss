@@ -1,6 +1,20 @@
 @use "variables" as v;
 @use "mixins" as m;
 
+
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+
 body.index {
   display: grid;
   grid-template-areas:
@@ -10,7 +24,6 @@ body.index {
     "aside main main main"
     "footer footer footer footer";
   grid-template-columns: 20% auto auto auto;
-  font-family: v.$font-family;
 }
 
 header {
@@ -35,16 +48,13 @@ body.explorar {
     "main main main aside"
     "footer footer footer footer";
   grid-template-columns: auto auto auto 20%;
-  font-family: v.$font-family;
 }
 
 aside {
-  @include m.flex-container(flex, column, stretch, center);
-  gap: 1rem;
+  @include m.flex-container(flex, column, stretch, flex-start);
   background-color: v.$color-fondo;
   position: sticky;
-  top: 0;
-  height: 60vh;
+  height: 80vh;
 }
 
 .explore {
@@ -59,14 +69,9 @@ aside {
   padding: 0.5rem;
   min-width: 80%;
 
-  h2 {
-    font-size: 1.8rem;
-  }
-
   ul {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     font-size: 1rem;
   }
 }
@@ -78,27 +83,42 @@ hr {
 
 .carousel-container {
   @include m.flex-container(flex, column, center, center);
-  margin: 50px;
+  max-width: 60vw;
+  margin: 50px 80px;
   padding: 20px;
 }
 
 .carousel-item {
   border-radius: 10%;
-  max-width: 90%;
+  width: 60vw;
 }
 
+.seccion-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+
 @media screen and (max-width: 768px) {
-  body {
+  body.index, body.explorar {
     display: grid;
     grid-template-areas:
       "header"
       "main"
       "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto min-content auto;
   }
 
   aside {
     display: none;
+  }
+
+  button.navbar-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
