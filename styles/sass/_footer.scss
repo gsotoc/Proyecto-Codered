@@ -4,10 +4,10 @@
 footer.footer {
     @include m.flex-container(flex, row, center, space-between);
     background-color: v.$color-primario;
-    color: white;
+    color: v.$color-fuente-principal;
     padding: 0 20px;
     height: 80px;
-    max-height: 80px;
+    height: 80px;
     font-size: 0.9rem;
     flex-wrap: wrap;
     gap: 10px;
@@ -26,8 +26,9 @@ footer.footer {
   
     .footer-contact p,
     .footer-links a {
-      color: white;
+      color: v.$color-fuente-principal;
       text-decoration: none;
+      font-weight: bold;
   
       &:hover {
         text-decoration: underline;
